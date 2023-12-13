@@ -5,10 +5,19 @@ d = dict()
 d["nodes"] = []
 d["links"] = []
 
-for hexagram in h.hexagrams_binary:
-  # hexagram is a str like '111111' or '000000'
-  num = int(hexagram, 2)
-  d["nodes"] += [{"id": num, "name": hexagram}]
+for i in range(64):
+  # hbin is a str like '111111' or '000000'
+  # hexagram's binary format
+  hbin = h.hexagrams_binary[i]
+
+  # Chinese name
+  cname = h.hexagrams_names[i]
+
+  d["nodes"] += [{
+    "id": int(hbin, 2), 
+    "hbin": hbin,
+    "name": cname
+  }]
 
 #print(d)
 
@@ -25,4 +34,4 @@ print(len(d["links"]))
 
 datastr = json.dumps(d, indent=2)
 with open('d3-graph.json', 'w') as outfile:
-  outfile.write(datastr)
+  json.dump(d, outfile, ensure_ascii=False, indent=2)
