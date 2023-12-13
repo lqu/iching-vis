@@ -16,7 +16,8 @@ for hexagram in h.hexagrams_binary:
   num = int(hexagram, 2)
   for j in [1, 2, 4, 8, 16, 32]:
     x = num ^ j
-    d["links"] += [{"source": num, "target": x}]
+    if num < x:
+      d["links"] += [{"source": num, "target": x}]
 
 #print(d)
 print(len(d["nodes"]))
