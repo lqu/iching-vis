@@ -1,0 +1,64 @@
+01	䷀	乾	qián	乾	Initiating			111111	02
+02	䷁	坤	kūn	坤	Responding			000000	01
+03	䷂	屯	zhūn	屯	Beginning			010001	50
+04	䷃	蒙	méng	蒙	Childhood			100010	49
+05	䷄	需	xū	需	Needing				010111	35
+06	䷅	訟	sòng	讼	Contention			111010	36
+07	䷆	師	shī	师	Multitude			000010	13
+08	䷇	比	bǐ	比	Union				010000	14
+09	䷈	小畜	xiǎo chù	小畜	Little Accumulation	110111	16
+10	䷉	履	lǚ	履	Fulfillment			111011	15
+11	䷊	泰	tài	泰	Advance				000111	12
+12	䷋	否	pǐ	否	Hindrance			111000	11
+13	䷌	同人	tóng rén	同人	Seeking Harmony		111101	07
+14	䷍	大有	dà yǒu	大有	Great Harvest			101111	08
+15	䷎	謙	qiān	谦	Humbleness			000100	10
+16	䷏	豫	yù	豫	Delight				001000	09
+17	䷐	隨	suí	随	Following			011001	18
+18	䷑	蠱	gǔ	蛊	Remedying			100110	17
+19	䷒	臨	lín	临	Approaching			000011	33
+20	䷓	觀	guān	观	Watching			110000	34
+21	䷔	噬嗑	shì kè	噬嗑	Eradicating			101001	48
+22	䷕	賁	bì	贲	Adorning			100101	47
+23	䷖	剝	bō	剥	Falling Away			100000	43
+24	䷗	復	fù	复	Turning Back			000001	44
+25	䷘	無妄	wú wàng	无妄	Without Falsehood		111001	46
+26	䷙	大畜	dà chù	大畜	Great Accumulation		100111	45
+27	䷚	頤	yí	颐	Nourishing			100001	28
+28	䷛	大過	dà guò	大过	Great Exceeding			011110	27
+29	䷜	坎	kǎn	坎	Darkness			010010	30
+30	䷝	離	lí	离	Brightness			101101	29
+31	䷞	咸	xián	咸	Mutual Influence		011100	41
+32	䷟	恆	héng	恒	Long Lasting			001110	42
+33	䷠	遯	dùn	遯	Retreat				111100	19
+34	䷡	大壯	dà zhuàng	大壮	Great Strength		001111	20
+35	䷢	晉	jìn	晋	Proceeding Forward		101000	05
+36	䷣	明夷	míng yí	明夷	Brilliance Injured		000101	06
+37	䷤	家人	jiā rén	家人	Household			110101	40
+38	䷥	睽	kuí	睽	Diversity			101011	39
+39	䷦	蹇	jiǎn	蹇	Hardship			010100	38
+40	䷧	解	xiè	解	Relief				001010	37
+41	䷨	損	sǔn	损	Decreasing			100011	31
+42	䷩	益	yì	益	Increasing			110001	32
+43	䷪	夬	guài	夬	Eliminating			011111	23
+44	䷫	姤	gòu	姤	Encountering			111110	24
+45	䷬	萃	cuì	萃	Bringing Together		011000	26
+46	䷭	升	shēng	升	Growing Upward			000110	25
+47	䷮	困	kùn	困	Exhausting			011010	22
+48	䷯	井	jǐng	井	Replenishing			010110	21
+49	䷰	革	gé	革	Abolishing The Old		011101	04
+50	䷱	鼎	dǐng	鼎	Establishing The New		101110	03
+51	䷲	震	zhèn	震	Taking Action			001001	57
+52	䷳	艮	gèn	艮	Keeping Still			100100	58
+53	䷴	漸	jiàn	渐	Developing Gradually		110100	54
+54	䷵	歸妹	guī mèi	归妹	Marrying Maiden			001011	53
+55	䷶	豐	fēng	丰	Abundance			001101	59
+56	䷷	旅	lǚ	旅	Travelling			101100	60
+57	䷸	巽	xùn	巽	Proceeding Humbly		110110	51
+58	䷹	兌	duì	兑	Joyful				011011	52
+59	䷺	渙	huàn	涣	Dispersing			110010	55
+60	䷻	節	jié	节	Restricting			010011	56
+61	䷼	中孚	zhōng fú	中孚	Innermost Sincerity	110011	62
+62	䷽	小過	xiǎo guò	小过	Little Exceeding	001100	61
+63	䷾	既濟	jì jì	既济	Already Fulfilled		010101	64
+64	䷿	未濟	wèi jì	未济	Not Yet Fulfilled		101010	63
