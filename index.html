@@ -106,8 +106,12 @@ d3.json("d3-graph.json", function(error, json) {
       adjArr = [1, 2, 4, 8, 16, 32]
       for (x in adjArr) {
         n = d ^ adjArr[x]
-        d3.select(`[id='${n}']`).style('fill', '#000000')
+        d3.select(`[id='${n}']`).style('fill', '#FF1111')
       }
+
+      opposite = d ^ 63
+      d3.select(`[id='${opposite}']`).style('fill', '#11DD11')
+
     })
     .on('mouseout', function(event, d) {
       node.style('fill', "")
