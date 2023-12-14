@@ -42,12 +42,12 @@ d3.json("d3-graph.json", function(error, json) {
 
   var link = svg.selectAll(".link")
       .data(json.links)
-    .enter().append("line")
+      .enter().append("line")
       .attr("class", "link");
 
   var node = svg.selectAll(".node")
       .data(sortedNodes)
-    .enter().append("g")
+      .enter().append("g")
       .attr("class", "node")
       .call(force.drag);
 
@@ -70,7 +70,32 @@ d3.json("d3-graph.json", function(error, json) {
   node.append("text")
       .attr("dx", 12)
       .attr("dy", ".75em")
-      .text(function(d) { console.log(d); return d.hbin + ", "     + d.id });
+      .text(function(d) { 
+        // console.log(d); 
+        return d.hbin + ", "     + d.id });
+
+
+  node.on('click', function(event, d) {
+    console.log(d);
+    //console.log(node.selectAll("text").data("dy"));
+    console.log(document.querySelectorAll("[dy='.75em']"));
+
+    //d3.select(this).style('fill', '#69b3b2')
+
+    // node.style('font', '20px sans-serif') won't work
+    // node.text.attr("font", '20px')	won't work
+    // node.style("color", "ff0000") no...
+    // node.style("font", "20px sans-serif") no...
+  })
+
+  node
+    .on('mouseover', function(event, d) {
+      node.style('fill', "#b8b8b8")
+      d3.select(this).style('fill', '#080808')
+    })
+    .on('mouseout', function(event, d) {
+      node.style('fill', "")
+    })
 
 //    // Add the highlighting functionality
 //    node
