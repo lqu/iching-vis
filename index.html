@@ -16,6 +16,32 @@
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
+function negate_hexagram(x) {
+  return x ^ 63
+}
+
+function reverse_hexagram(x) {
+  return ((x & 1) << 5)
+       + ((x & 2) << 3)
+       + ((x & 4) << 1)
+       + ((x & 8) >> 1)
+       + ((x & 16) >> 3)
+       + ((x & 32) >> 5)
+}
+
+console.assert ( 63 == reverse_hexagram(63) )
+console.assert ( 1 == reverse_hexagram(32) )
+console.assert ( 055 == reverse_hexagram(055) )
+console.assert ( 070 == reverse_hexagram(007) )
+console.assert ( 073 == reverse_hexagram(067) )
+console.assert ( 041 == reverse_hexagram(041) )
+console.assert ( 014 == reverse_hexagram(014) )
+console.assert ( 025 == reverse_hexagram(052) )
+console.assert ( 036 == reverse_hexagram(036) )
+console.assert ( 033 == reverse_hexagram(066) )
+console.assert ( 024 == reverse_hexagram(012) )
+
+
 var width = 1200,
     height = 1200
 
@@ -27,7 +53,7 @@ var force = d3.layout.force()
     .gravity(0.05)
     .distance(100)
     .charge(-300)
-    .size([width, height]);
+    .size([width, height])
 
 d3.json("d3-graph.json", function(error, json) {
   if (error) throw error;
@@ -75,33 +101,12 @@ d3.json("d3-graph.json", function(error, json) {
         // console.log(d);
         return d.hbin + ", "     + d.id });
 
-
-//  node.on('click', function(event, d) {
-//    console.log(d);
-//    //console.log(node.selectAll("text").data("dy"));
-//    //d3.select(this).style('fill', '#69b3b2')
-//    // node.style('font', '20px sans-serif') won't work
-//    // node.text.attr("font", '20px')	won't work
-//    // node.style("color", "ff0000") no...
-//    // node.style("font", "20px sans-serif") no...
-//
-//    //console.log(document.querySelectorAll("[dy='.75em']"));
-//
-//    adjArr = [1, 2, 4, 8, 16, 32]
-//    for (x in adjArr) {
-//      n = d ^ adjArr[x]
-//      //node.selectAll(`[id='${n}']`).style('fill', '#000000')
-//      //console.log(adjArr[x], d, n)
-//      //console.log(d3.select(`[id='${n}']`))
-//      d3.select(`[id='${n}']`).style('fill', '#000000')
-//    }
-//
-//  })
+  d3.select("[id='0']").attr("fixed", "true").attr("x", 200).attr("y", 200)
 
   node
     .on('mouseover', function(event, d) {
       node.style('fill', "#b8b8b8")
-      d3.select(this).style('fill', '#000000')
+      d3.select(this).style('fill', '#C0C000')
 
       adjArr = [1, 2, 4, 8, 16, 32]
       for (x in adjArr) {
@@ -109,8 +114,11 @@ d3.json("d3-graph.json", function(error, json) {
         d3.select(`[id='${n}']`).style('fill', '#FF1111')
       }
 
-      opposite = d ^ 63
-      d3.select(`[id='${opposite}']`).style('fill', '#11DD11')
+      neg = negate_hexagram(d)
+      d3.select(`[id='${neg}']`).style('fill', '#11DD11')
+
+      rev = reverse_hexagram(d)
+      d3.select(`[id='${rev}']`).style('fill', '#1111EE')
 
     })
     .on('mouseout', function(event, d) {
