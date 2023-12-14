@@ -49,6 +49,7 @@ d3.json("d3-graph.json", function(error, json) {
       .data(sortedNodes)
       .enter().append("g")
       .attr("class", "node")
+      .attr("id", function(d, i) { return i })
       .call(force.drag);
 
   node.append("image")
