@@ -17,7 +17,7 @@
 <script>
 
 var width = 1200,
-    height = 1200 
+    height = 1200
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -71,28 +71,43 @@ d3.json("d3-graph.json", function(error, json) {
   node.append("text")
       .attr("dx", 12)
       .attr("dy", ".75em")
-      .text(function(d) { 
-        // console.log(d); 
+      .text(function(d) {
+        // console.log(d);
         return d.hbin + ", "     + d.id });
 
 
-  node.on('click', function(event, d) {
-    console.log(d);
-    //console.log(node.selectAll("text").data("dy"));
-    console.log(document.querySelectorAll("[dy='.75em']"));
-
-    //d3.select(this).style('fill', '#69b3b2')
-
-    // node.style('font', '20px sans-serif') won't work
-    // node.text.attr("font", '20px')	won't work
-    // node.style("color", "ff0000") no...
-    // node.style("font", "20px sans-serif") no...
-  })
+//  node.on('click', function(event, d) {
+//    console.log(d);
+//    //console.log(node.selectAll("text").data("dy"));
+//    //d3.select(this).style('fill', '#69b3b2')
+//    // node.style('font', '20px sans-serif') won't work
+//    // node.text.attr("font", '20px')	won't work
+//    // node.style("color", "ff0000") no...
+//    // node.style("font", "20px sans-serif") no...
+//
+//    //console.log(document.querySelectorAll("[dy='.75em']"));
+//
+//    adjArr = [1, 2, 4, 8, 16, 32]
+//    for (x in adjArr) {
+//      n = d ^ adjArr[x]
+//      //node.selectAll(`[id='${n}']`).style('fill', '#000000')
+//      //console.log(adjArr[x], d, n)
+//      //console.log(d3.select(`[id='${n}']`))
+//      d3.select(`[id='${n}']`).style('fill', '#000000')
+//    }
+//
+//  })
 
   node
     .on('mouseover', function(event, d) {
       node.style('fill', "#b8b8b8")
-      d3.select(this).style('fill', '#080808')
+      d3.select(this).style('fill', '#000000')
+
+      adjArr = [1, 2, 4, 8, 16, 32]
+      for (x in adjArr) {
+        n = d ^ adjArr[x]
+        d3.select(`[id='${n}']`).style('fill', '#000000')
+      }
     })
     .on('mouseout', function(event, d) {
       node.style('fill', "")
