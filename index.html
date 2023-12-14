@@ -16,6 +16,16 @@
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
+color_yellow = '#ffd700' 	// gold, (self)
+color_grey = '#b8b8b8'		// grey, (not in focus)
+
+color_red = '#e2062c'		// red, medium candy apple, (negate)
+color_green = '#059033'		// gree, north texas, (adjacent six)
+color_blue = '#0067a5'		// blue, sapphire, (reverse)
+
+color_green_mix = '#1b4d3e' 	// green, english, (mix yellow/blue, self/reverse)
+color_purple = '#9400d3'	// purple, dark violet, (mix negate/reverse)
+
 function negate_hexagram(x) {
   return x ^ 63
 }
@@ -105,43 +115,35 @@ d3.json("d3-graph.json", function(error, json) {
 
   node
     .on('mouseover', function(event, d) {
-      node.style('fill', "#b8b8b8")
-      d3.select(this).style('fill', '#C0C000')
+      node.style('fill', color_grey)
+      d3.select(this).style('fill', color_yellow)
 
       adjArr = [1, 2, 4, 8, 16, 32]
       for (x in adjArr) {
         n = d ^ adjArr[x]
-        d3.select(`[id='${n}']`).style('fill', '#FF1111')
+        d3.select(`[id='${n}']`).style('fill', color_green)
       }
 
       neg = negate_hexagram(d)
-      d3.select(`[id='${neg}']`).style('fill', '#11DD11')
+      d3.select(`[id='${neg}']`).style('fill', color_red)
 
       rev = reverse_hexagram(d)
-      d3.select(`[id='${rev}']`).style('fill', '#1111EE')
+      d3.select(`[id='${rev}']`).style('fill', color_blue)
+
+      if (neg == rev) {
+        console.log("mix: neg == rev")
+        d3.select(`[id='${rev}']`).style('fill', color_purple)
+      }
+
+      if (d == rev) {
+        console.log("mix: self == rev")
+        d3.select(`[id='${rev}']`).style('fill', color_green_mix)
+      }
 
     })
     .on('mouseout', function(event, d) {
       node.style('fill', "")
     })
-
-//    // Add the highlighting functionality
-//    node
-//      .on('mouseover', function(event,d){
-//        // Highlight the nodes: every node is green except of him
-//        node.style('fill', "#B8B8B8")
-//        d3.select(this).style('fill', '#69b3b2')
-//        // Highlight the connections
-//        link
-//          .style('stroke', a=>  a.source === d.id || a.target === d.id ? '#69b3b2' : '#b8b8b8')
-//          .style('stroke-width', a=>a.source === d.id || a.target === d.id ? 4 : 1)
-//      })
-//      .on('mouseout', function(event,d){
-//        node.style('fill', "#69b3a2")
-//        link
-//          .style('stroke', 'black')
-//          .style('stroke-width', '1')
-//      })
 
   force.on("tick", function() {
     link.attr("x1", function(d) { return d.source.x; })
