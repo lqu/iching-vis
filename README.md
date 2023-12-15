@@ -16,7 +16,7 @@ https://github.com/lqu/iching-vis/assets/432856/75aa0dbd-0d6a-405e-a91c-994722fe
 ![](docs/screenshot-4.png)
 
 ## Notes
-This visualization is to expand the Hamming Space from 3D to six dimentions, from a cube to a 6-cube like this. 
+This visualization is to expand the [Hamming Space](https://en.wikipedia.org/wiki/Hamming_space) from 3D to six dimentions, from a cube to a [6-cube](https://en.wikipedia.org/wiki/6-cube) like this. 
 
 <img width="256" alt="image" src="https://github.com/lqu/iching-vis/assets/432856/fcef21cf-3e75-4e3b-9c48-3cd009c2c160">
  =>> 
@@ -24,5 +24,5 @@ This visualization is to expand the Hamming Space from 3D to six dimentions, fro
 
 
 In the 6-cube representation, 
-an edge exists if two nodes have an Hamming distance of one, meaning the binary forms differ at only one digit,
+an edge exists if two nodes have an [Hamming Distance](https://en.wikipedia.org/wiki/Hamming_distance) of one, meaning the binary forms differ at only one digit,
 e.g. 000000 and 000100.
