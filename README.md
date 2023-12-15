@@ -2,7 +2,7 @@
 This interactive tool helps you visualize the relations between the Hexagrams. Play and learn [here](https://lqu.github.io/iching-vis/) 
 
 ## Demo
-![](docs/demo.mov)
+![](docs/demo.m4v)
 
 ## Screenshots
 ![](docs/screenshot-1.png)
