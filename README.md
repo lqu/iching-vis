@@ -1,6 +1,8 @@
 # I-Ching Hexagrams Relation Visualization (易經64卦關係圖）
 This interactive tool helps you visualize the relations between the Hexagrams. Play and learn [here](https://lqu.github.io/iching-vis/).
 
+If you are not interested in any special or arbitrary name/meaning assignment, use it as a visualization of a 6D [Hamming Space](https://en.wikipedia.org/wiki/Hamming_space) or a [6-cube](https://en.wikipedia.org/wiki/6-cube).
+
 ## Features
 * Shows Hamming distance between any two Hexagrams -- adjacent nodes d=1, opposite node d=6
 * Supports drag-n-drop of any Hexagram to re-organize graph, and keep the same topology
