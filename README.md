@@ -8,6 +8,7 @@ This interactive tool helps you visualize the relations between the Hexagrams. P
 ![](docs/screenshot-1.png)
 ![](docs/screenshot-2.png)
 ![](docs/screenshot-3.png)
+![](docs/screenshot-4.png)
 
 ## Notes
 In the 6-cube representation, 
