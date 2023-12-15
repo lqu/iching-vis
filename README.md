@@ -25,4 +25,4 @@ This visualization is to expand the Hamming Space from 3D to six dimentions, fro
 
 In the 6-cube representation, 
 an edge exists if two nodes have an Hamming distance of one, meaning the binary forms differ at only one digit,
-e.g. 111001 and 110001.
+e.g. 000000 and 000100.
