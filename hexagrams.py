@@ -2,9 +2,9 @@
 
 N = 64
 
-# Generating the first 16 hexagrams of the Yi Jing with their Chinese names and binary representation
+# Generating the 64 hexagrams of the Yi Jing with their Chinese names and binary representation
 
-# List of first 16 hexagrams in binary form, with 0 representing yang and 1 representing yin
+# List of 64 hexagrams in binary form, with 0 representing yang and 1 representing yin
 # The hexagrams are read from bottom to top
 hexagrams_binary = [
   "111111",
@@ -73,7 +73,7 @@ hexagrams_binary = [
   "101010",
 ]
 
-# Chinese names of the first 16 hexagrams
+# Chinese names of the 64 hexagrams
 hexagrams_names = [
     "乾 Qián", 
     "坤 Kūn", 
